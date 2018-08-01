@@ -104,6 +104,7 @@ let list = [{
 let newList = []
 Mock.mock('/api/getvedio', function (options) {
   let obj = JSON.parse(options.body)
+  console.log(obj)
   let startIndex = obj.pageId * 5 - 5
   let endIndex = obj.pageId * 5
   if(endIndex < list.length) {
