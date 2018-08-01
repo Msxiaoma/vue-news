@@ -16,6 +16,8 @@ export default new Router({
     }, {
       path: '/channels',
       component: resolve => require(['@/page/channels'], resolve)
-    }
-  ]
+    },{
+      path: '/search',
+      component: resolve => require(['@/page/search'], resolve)
+    }]
 })

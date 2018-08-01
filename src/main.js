@@ -5,8 +5,8 @@ import App from './App'
 import router from './router'
 import  './assets/css/reset.css'
 import store from './store/store'
-
-import './mock/mock'
+// import './mock/mock'
+require('./mock/mock.js')
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

@@ -1,17 +1,40 @@
 <template>
     <div class="stage-header">
         <div class="header-left">
-            <img src="../assets/img/message.png" class="header-message">
+            <img src="../assets/img/message.png" class="header-message" @click="showModal">
         </div>
-        <div class="header-center">
-            <img src="../assets/img/logo.png" class="header-logo"/><img src="../assets/img/refresh.png" class="header-refresh"/>
-             
+        <div class="header-center" @click="refreshPage">
+            <img src="../assets/img/logo.png" class="header-logo"/><img src="../assets/img/refresh.png" class="header-refresh" :class="{'rotate': refresh === true}"/>
         </div>
         <div class="header-left">
-            <img src="../assets/img/search.png" class="header-message">
+            <img src="../assets/img/search.png" class="header-message" @click="search">
         </div>
     </div>
 </template>
+<script>
+export default {
+    data() {
+        return {
+            refresh: false
+        }
+    },
+    methods: {
+        refreshPage() {
+            this.refresh = true
+            setTimeout(() => {
+                this.refresh = false
+            }, 200);
+        },
+        search() {
+            this.$router.push('/search')
+        },
+        showModal() {
+            this.$emit('showModal')
+        }
+    }
+}
+</script>
+
 <style>
 .stage-header{
     position: fixed;
@@ -52,6 +75,21 @@
     height: .3rem;
     display: inline-block;
     margin-left: .1rem;
+}
+ .rotate {
+  -webkit-transform-style: preserve-3d;
+  -webkit-animation: x-spin 0.7s linear;
+}
+@-webkit-keyframes x-spin {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  50% {
+    -webkit-transform: rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+  }
 }
 </style>
 
