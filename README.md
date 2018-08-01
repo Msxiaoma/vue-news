@@ -1,6 +1,8 @@
-# vue-news
+# 使用 vue 仿今日头条app
 
-> A Vue.js project
+## 预实现功能
+
+1. 首页展示
 
 ## Build Setup
 
