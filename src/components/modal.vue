@@ -2,6 +2,9 @@
     <div class="message">
         <div class="message-box">
             <span class="message-close" @click="closeModal"></span>
+            <img class="message-banner" src="../assets/img/banner.png">
+            <p class="message-tip">已加载好您感兴趣的头条</p>
+            <div class="download-btn">立即打开</div>
         </div>
     </div>
 </template>
@@ -44,6 +47,31 @@ export default {
     top: 0px;
     width: .8rem;
     height: .68rem;
+}
+.message-banner{
+    position: relative;
+    top: .2rem;
+    height: 2.42rem;
+    width: 3.3rem;
+    display: block;
+    margin: 0 auto;
+}
+.message-tip{
+    margin-top: .26rem;
+    margin-bottom: .48rem;
+    font-size: .34rem;
+    text-align: center;
+    color: #a5a5a5;
+}
+.download-btn{
+    font-size: .4rem;
+    text-align: center;
+    background: #ff6762;
+    color: #fff;
+    border-radius: .1rem;
+    text-shadow: 0px 1px 1px #f0221c;
+    padding: .1rem .4rem;
+    margin: 0rem .5rem;
 }
 </style>
 
